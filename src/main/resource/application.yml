@@ -1,0 +1,50 @@
+
+spring:
+    application:
+        name: wxdev
+    mvc:
+      view:
+        prefix: /WEB-INF/page/
+        suffix: .jsp
+                        
+server:
+    port: 8080
+    context-path: /wxdev
+
+wx:
+    appid: wx19
+    appsecret: c5c
+    basepath:  http://www.xxx.com/wxdev
+    htmlPattern: .*/jsp/.*.html|.*/jsp/.*.jsp
+
+nhmicro:
+  config:
+    ruleStamp: true
+    jarFileFlag: false
+    dirFlag: true
+    rulePath: /groovy/
+    mvc_prepath: micromvc
+    serviceScanPathFlag: false
+    serviceScanPath: foo.web,foo.service
+    daoScanPathFlag: false
+    daoScanPath: foo.dao
+
+druid:
+    url: jdbc:mysql://localhost:3306/jeffreyningsoft?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8
+    driver-class: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    initial-size: 1
+    min-idle: 1
+    max-active: 20
+    test-on-borrow: true
+    max-wait: 60000
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    validation-query: SELECT 1 FROM DUAL
+    test-While-Idle: true
+    test-on-return: false
+    pool-prepared-statements: false
+    max-pool-prepared-statement-per-connection-size: 20
+    filters: stat,wall,config
+    connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000;config.decrypt=false
